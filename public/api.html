@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-85948709-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-85948709-5');
+</script>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" type="text/css" href="casemap.css">
+    <meta
+      name="description"
+      content="COVID-19 total case map API and more"
+    />
+    <title>COVID-19 Casemap API and more</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="w-section section main" id="top">
+    <h2>COVID-19 Casemap API and more</h2>
+    </div>
+    <div class="w-section section " id="detail">
+      <div class="w-container">
+      
+      <h3>RESTful API</h3>
+      <div>
+        <p>
+        Our RESTful API is free to use.<br /><br />
+        <strong>1. Get all data in the database</strong><br />
+        <p>Request:&nbsp;
+https://covid19api.tmsoftwareinc.com/v1/cases/</p>
+<p>Response:&nbsp;
+Array of JSON like<br />
+[{"country":"United Kingdom","state":"Cayman Islands","county":"","city":"","cases":66,"deaths":1,"date":"2020-04-21"},<br />
+{"country":"United Kingdom","state":"Channel Islands","county":"","city":"","cases":496,"deaths":24,"date":"2020-04-21"},<br />
+{"country":"Netherlands","state":"Curacao","county":"","city":"","cases":14,"deaths":1,"date":"2020-04-21"},<br />
+{"country":"United Kingdom","state":"Falkland Islands (Malvinas)","county":"","city":"","cases":11,"deaths":0,"date":"2020-04-21"},<br />
+<br />
+-1 in cases or deaths means NA
+</p>
+<br />
+<strong>2. Get data for a city, county, state, country</strong><br />
+        <p>Request:&nbsp;
+          https://covid19api.tmsoftwareinc.com/v1/addresses?country=us&state=california&county=orange&city=irvine<br />
+        If city is omitted, county data will be returned for the United States.<br />
+        For the other countries, state, county, and city are ignored in most cases.
+        </p>
+<p>Response:&nbsp;
+Array of JSON like<br />
+[{"country":"us","state":"California","county":"Orange","city":"Irvine","cases":118,"deaths":-1,"date":"2020-04-21"},<br />
+{"country":"us","state":"California","county":"Orange","city":"Irvine","cases":118,"deaths":-1,"date":"2020-04-20"},<br />
+{"country":"us","state":"California","county":"Orange","city":"Irvine","cases":118,"deaths":-1,"date":"2020-04-19"},<br />
+{"country":"us","state":"California","county":"Orange","city":"Irvine","cases":116,"deaths":-1,"date":"2020-04-18"},<br />
+<br />
+-1 in cases or deaths means NA
+
+</p>
+
+      </div>
+
+      <h3 id="androidapp">Android App</h3>
+      <div class = "centering">
+        <img width="100" src="CaseMapIcon-192X192.png"></img>
+      </div>
+        <div>
+        Google Play did not allow us to publish COVID-19 Casemap. You can download COVID-19 Casemap binary apk file from our site and install it on your device.<br /><br />
+<strong>How to install COVID-19 Casemap on your Android phone or tablet.</strong><br />
+<ul>
+<li>Enable installation from unkown sources on your Android device. Instruction is found <a target="_blank" href="https://www.technipages.com/install-apk-files-on-android">here.</a></li>
+<li>Launch browser on yoru Android device and download apk file from <a href="https://covid19.tmsoftwareinc.com/covid19_casemap.apk">here</a>.</li>
+<li>Installer will be launched automatically.</li>
+</ul>
+
+
+      </div>
+
+      </div>
+
+      <div class="horileft page-link"><a target="_blank" href="https://tmsoftwareinc.com">TM Software, Inc.</a></div>
+    </div>
+    
+  
+  </body>
+</html>

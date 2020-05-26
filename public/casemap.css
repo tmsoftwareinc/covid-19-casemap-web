@@ -333,6 +333,7 @@ p {
   text-transform: uppercase;
 }
 .page-link {
+  border-bottom: 1px solid transparent;
   -webkit-transition: color 300ms ease, border 300ms ease;
   transition: color 300ms ease, border 300ms ease;
   color: #489fd9;
@@ -568,7 +569,6 @@ p {
   width: auto;
   float: none;
   text-align: center;
-  font-size: 12px;
 }
 .horiright {
   width: auto;

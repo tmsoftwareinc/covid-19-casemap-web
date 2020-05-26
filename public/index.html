@@ -5,9 +5,10 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" type="text/css" href="react-tabs.css">
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Find COVID-19 number of cases and history around you"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
@@ -24,20 +25,95 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>COVID-19 Casemap</title>
+    <script>
+      function hideIt(id) {
+        var elem = document.getElementById(id);
+        var elemb = document.getElementById('hidebutton');
+        if(elem.style.display === "block") {
+          elem.style.display = "none";
+          elemb.value = "Show Details";
+        }
+        else {
+          elem.style.display = "block";
+          elemb.value = "Hide Details";
+        }
+      }
+
+      var chartDisp = true;
+      function hideIt2(id) {
+        var elem = document.getElementById(id);
+        var elemb = document.getElementById('hide2button');
+        if(chartDisp) {
+          elem.style.display = "none";
+          elemb.value = "Show Chart";
+          chartDisp = false;
+        }
+        else {
+          elem.style.display = "block";
+          elemb.value = "Hide Chart";
+          chartDisp = true;
+        }
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div class="w-section section main" id="top">
+    <h2>Welcome to COVID-19 Casemap Beta</h2>
+    </div>
+    <div class="w-container centering">
+      State of Illinois city data are added, 5/21/2020<br />
+      If you have city data information, contact us.<br />
+      <!-- <a href="#" id="hidebutton" class="button small-button" onClick="hideIt('detail');">Hide Description</a> -->
+    <input type="button" value="Hide Details" id="hidebutton" class="button small-button" onClick="hideIt('detail');"> 
+    <input type="button" value="Hide Chart" id="hide2button" class="button small-button" onClick="hideIt2('chart');"> 
+  </div>
+    <div class="w-section section " id="detail" style="display:block;">
+      <div class="w-container">
+        We collect publicly available COVID-19 cumulative case data and provide them to our community via easy-to-understand interactive map interface. 
+      </div>
+      <div class="centering">
+      <iframe width="400" height="225"
+src="https://www.youtube.com/embed/kKYUSeR1Ruw" frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen></iframe><br />
+<strong>COVID-19 Casemap iPhone App Video</strong>
+</div>
+<div class="centering">
+  <iframe width="400" height="225"
+src="https://www.youtube.com/embed/WVvm47b-IDs" frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen></iframe><br />
+<strong>COVID-19 Casemap Android App Video. Installation instruction is <a target="_blank" href="api.html#androidapp">here</a>.</strong>
+</div>
+      <div class="w-container">
+        
+        <div style="font-size: 12px;">This Web App was developed because App Store did not allow <a target="_blank" href="https://mkm.tmsoftwareinc.com/">Michael Miyajima</a> to publish COVID-19 Casemap iPhone App.
+        Michael, a High School sophomore, is looking for recognized institution such as a governmental entity, hospital, insurance company, non-governmental organization, or
+        university who can publish his COVID-19 Casemap iPhone App. Contact him at <a href="mailto:mkm@tmsoftwareinc.com?subject=To mkm from Casemap site">mkm@tmsoftwareinc.com</a>
+        </div>
+      </div>
+      <div class="horileft page-link"><a target="_blank" href="data.html">Data Sources</a>&nbsp;&nbsp;<a target="_blank" href="api.html">API and more</a></div>
+      <div class="horileft page-link"><a target="_blank" href="tos.html">Terms of Service</a>&nbsp;&nbsp;<a target="_blank" href="disclaimer.html">Disclaimer</a></div>
+      <div class="horileft">This is a free service developed and hosted by <a target="_blank" href="https://tmsoftwareinc.com">TM Software, Inc.</a></div>
+      <div class="horileft">Email feedback to <a href="mailto:casemap@tmsoftwareinc.com?subject=Feedback from Casemap site">casemap@tmsoftwareinc.com</a></div>
+      <div class="horileft"><a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank" class="btn btn-link" role="button">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0</a></div>
+    </div>
+      
+      <div id="root" style="position: absolute; width: 100%; height: 60%;"></div>
+    
+      <!--
+      <div class="w-row">
+        <div class="w-col w-col-6">
+          <div id="root" style="position: absolute; width: 100%; height: 100%;"></div>
+        </div>
+      <div class="w-col w-col-6">
+      <div id="casetab">
+        test
+      </div>
+    </div>
+  </div>
+  -->
   </body>
 </html>
