@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { GoogleApiWrapper, Map, Marker, InfoWindow } from 'google-maps-react';
+import { GoogleApiWrapper, Map, InfoWindow } from 'google-maps-react';
 import {LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer} from 'recharts';
 import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';
 
@@ -170,7 +170,6 @@ class GoogleMap extends Component {
   }
 
   mapClicked = (mapProps, map, event) => {
-    const { markers } = this.state;
     const lat = event.latLng.lat();
     const lng = event.latLng.lng();
     this.setState({
@@ -187,7 +186,7 @@ class GoogleMap extends Component {
   }
 
   onSearchLocationKeyPress = (event) => {
-    if(event.keyCode == 13) {
+    if(event.keyCode === 13) {
       this.onSearchButtonClick();
     }
   }
