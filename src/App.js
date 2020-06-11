@@ -110,8 +110,13 @@ class GoogleMap extends Component {
             });
           }
           else {
-            this.setState({
-              countryTabDisabled: true
+            fetch(API_ADR+data[0]['country'])
+            .then(res4 => res4.json())
+            .then((data4) => {
+              this.setState({
+                countryTabDisabled: false,
+                countryJsonData: data4
+              });
             });
           }
         } 
@@ -142,7 +147,6 @@ class GoogleMap extends Component {
         fetch(API_ADR+data[0]['country']+'&state='+data[0]['state'])
         .then(res3 => res3.json())
         .then((data3) => {
-        console.log(data3)
         this.setState({
           tabIndex: 0,
           countryTabDisabled: true,
